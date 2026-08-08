@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: mcp-client
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.2:latest
+    mcp:
+      client:
+        name: mcp-client
+        version: 1.0.0
+        toolcallback:
+          enabled: true
+        streamable-http:
+          connections:
+            mcp-server:
+              url: http://localhost:8080/mcp
+
+server:
+  port: 8081
